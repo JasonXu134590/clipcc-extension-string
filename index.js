@@ -49,7 +49,7 @@ class StringExtension extends Extension {
         api.addCategory({
             categoryId: 'jasonxu.string.string',
             messageId: 'jasonxu.string.string.messageid',
-            color: '#CC3299'
+            color: '#E96848'
         });
 
         api.addBlock({
