@@ -61,7 +61,7 @@ class StringExtension extends Extension {
             param: {
                 COLOUR: {
                     type: type.ParameterType.COLOR,
-                    default: '#114514'
+                    default: '#E96848'
                 }
             }
         });
@@ -75,7 +75,7 @@ class StringExtension extends Extension {
             param: {
                 STR: {
                     type: type.ParameterType.STRING,
-                    default: '%E5%A3%B9%E5%A3%B9%E8%82%86%E4%BC%8D%E5%A3%B9%E8%82%86'
+                    default: '%E4%BD%A0%E5%A5%BD'
                 }
             }
         });
@@ -89,7 +89,7 @@ class StringExtension extends Extension {
             param: {
                 STR: {
                     type: type.ParameterType.STRING,
-                    default: '壹壹肆伍壹肆'
+                    default: '你好'
                 }
             }
         });
@@ -145,7 +145,7 @@ class StringExtension extends Extension {
             param: {
                 NUM:{
                     type: type.ParameterType.NUMBER,
-                    default: '114514'
+                    default: '16'
                 },
                 BASE:{
                     type: type.ParameterType.NUMBER,
@@ -163,7 +163,7 @@ class StringExtension extends Extension {
             param: {
                 NUM:{
                     type: type.ParameterType.NUMBER,
-                    default: '11011111101010010'
+                    default: '10000'
                 },
                 BASE:{
                     type: type.ParameterType.NUMBER,
@@ -185,11 +185,11 @@ class StringExtension extends Extension {
                 },
                 FROM: {
                     type: type.ParameterType.NUMBER,
-                    default: '114514'
+                    default: '1'
                 },
                 TO: {
                     type: type.ParameterType.NUMBER,
-                    default: '1919810'
+                    default: '3'
                 }
             }
         });
@@ -203,7 +203,7 @@ class StringExtension extends Extension {
             param: {
                 CODE: {
                     type: type.ParameterType.NUMBER,
-                    default: '114514'
+                    default: '33609'
                 }
             }
         });
@@ -217,11 +217,11 @@ class StringExtension extends Extension {
             param: {
                 STR: {
                     type: type.ParameterType.STRING,
-                    default: 'ClipTeam yyds!'
+                    default: '草'
                 },
                 INDEX: {
                     type: type.ParameterType.NUMBER,
-                    default: '114514'
+                    default: '1'
                 }
             }
         });
