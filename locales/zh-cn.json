@@ -1,0 +1,16 @@
+{
+    "jasonxu.string.name": "字符串扩展",
+    "jasonxu.string.description": "用于处理字符串信息。",
+    "jasonxu.string.string.messageid": "字符串",
+    "jasonxu.string.substr": "获取字符串 [STR] 从第 [FROM] 个字符至第 [TO] 个字符的值",
+    "jasonxu.string.colorToDecimal": "把 [COLOUR] 转换为十进制",
+    "jasonxu.string.decodeURI": "把URI: [STR] 转换为正常格式",
+    "jasonxu.string.encodeURI": "把正常格式: [STR] 转换为URI格式",
+    "jasonxu.string.reverse": "把 [STR] 倒转",
+    "jasonxu.string.toLowercase": "把 [STR] 全部变为小写",
+    "jasonxu.string.toUppercase": "把 [STR] 全部变为大写",
+    "jasonxu.string.convertFromDecimal": "将十进制数字 [NUM] 转换为 [BASE] 进制",
+    "jasonxu.string.charCodeAt": "获取字符串 [STR] 中第 [INDEX] 个字符的字符编码",
+    "jasonxu.string.fromCharCode": "获取字符编码为 [CODE] 的字符",
+    "jasonxu.string.toDecimal": "将 [BASE] 进制数字 [NUM] 转换为十进制"
+}
