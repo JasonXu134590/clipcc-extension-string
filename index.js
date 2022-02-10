@@ -2,9 +2,17 @@ const { Extension, type, api } = require('clipcc-extension');
 
 class StringExtension extends Extension {
 
+    find_(str, find, from){
+        return str.indexOf(find, from-1)+1;
+    }
+
+    insertStr(soure, start, newStr){   
+        return soure.slice(0, start) + newStr + soure.slice(start);
+    }
+
     substr_(str, from, to) {
         return str.slice(from-1,to);
-    }
+    }	
 
     charCodeAt(str,index) {
         if (index < 1 || index > str.length) return NaN;
@@ -35,6 +43,10 @@ class StringExtension extends Extension {
         return str.split('').reverse().join('');
     }
 
+    cut_list(str,char,num){
+        return str.split(char)[num-1]
+    }
+
     colorToDecimal(color_){
         if(typeof(color_)=='string'){
             return parseInt(color_.slice(1,7),16);
@@ -62,6 +74,28 @@ class StringExtension extends Extension {
                 COLOUR: {
                     type: type.ParameterType.COLOR,
                     default: '#E96848'
+                }
+            }
+        });
+
+        api.addBlock({
+            opcode: 'jasonxu.string.cutList.opcode',
+            type: type.BlockType.REPORTER,
+            messageId: 'jasonxu.string.cutList', 
+            categoryId: 'jasonxu.string.string',
+            function: args => this.cut_list(args.LIST, args.CUTER, args.NUM),
+            param: {
+                LIST: {
+                    type: type.ParameterType.STRING,
+                    default: 'ClipTeam|yyds!'
+                },
+                CUTER: {
+                    type: type.ParameterType.STRING,
+                    default: '|'
+                },
+                NUM: {
+                    type: type.ParameterType.NUMBER,
+                    default: '1'
                 }
             }
         });
@@ -107,6 +141,28 @@ class StringExtension extends Extension {
                 }
             }
         });
+
+        api.addBlock({
+            opcode: 'jasonxu.string.join.opcode',
+            type: type.BlockType.REPORTER,
+            messageId: 'jasonxu.string.join', 
+            categoryId: 'jasonxu.string.string',
+            function: args => this.insertStr(args.STR, args.INDEX-1, args.JOIN),
+            param: {
+                STR: {
+                    type: type.ParameterType.STRING,
+                    default: 'ClipTeam yds!'
+                },
+                INDEX: {
+                    type: type.ParameterType.NUMBER,
+                    default: '10'
+                },
+                JOIN: {
+                    type: type.ParameterType.STRING,
+                    default: 'y'
+                }
+            }
+        });
         
         api.addBlock({
             opcode: 'jasonxu.string.toLowercase.opcode',
@@ -132,6 +188,28 @@ class StringExtension extends Extension {
                 STR: {
                     type: type.ParameterType.STRING,
                     default: 'ClipTeam yyds!'
+                }
+            }
+        });
+
+        api.addBlock({
+            opcode: 'jasonxu.string.findfrom.opcode',
+            type: type.BlockType.REPORTER,
+            messageId: 'jasonxu.string.findfrom', 
+            categoryId: 'jasonxu.string.string',
+            function: args => this.find_(args.STR, args.FIND, args.FROM),
+            param: {
+                STR: {
+                    type: type.ParameterType.STRING,
+                    default: 'ClipTeam yyds!'
+                },
+                FROM: {
+                    type: type.ParameterType.NUMBER,
+                    default: '1'
+                },
+                FIND: {
+                    type: type.ParameterType.STRING,
+                    default: 'yyds'
                 }
             }
         });

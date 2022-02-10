@@ -3,14 +3,17 @@
     "jasonxu.string.description": "An extension for String.",
     "jasonxu.string.string.messageid": "String",
     "jasonxu.string.substr": "substring [STR] from [FROM] to [TO]",
+    "jasonxu.string.findfrom": "find string [FIND] in string[STR] from [FROM] begin at leftt",
     "jasonxu.string.colorToDecimal": "convert [COLOUR] to decimal number",
     "jasonxu.string.decodeURI": "decode URI [STR]",
     "jasonxu.string.encodeURI": "encode URI [STR]",
     "jasonxu.string.reverse": "reverse [STR]",
+    "jasonxu.string.cutList": "split list [LIST] by [CUTER] and get item [NUM] of list",
     "jasonxu.string.toLowercase": "convert all letters in [STR] to lowercase",
     "jasonxu.string.toUppercase": "convert all letters in [STR] to uppercase",
     "jasonxu.string.convertFromDecimal": "convert [NUM] to base [BASE]",
     "jasonxu.string.charCodeAt": "get the character encoding of the [INDEX] character in string [STR]",
     "jasonxu.string.fromCharCode": "get the character by character encoding [CODE]",
-    "jasonxu.string.toDecimal": "Convert [NUM] in base [BASE] to decimal number"
+    "jasonxu.string.toDecimal": "Convert [NUM] in base [BASE] to decimal number",
+    "jasonxu.string.join": "Insert [JOIN] before [INDEX] of string [STR]"
 }
