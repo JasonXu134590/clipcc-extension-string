@@ -15,5 +15,7 @@
     "jasonxu.string.charCodeAt": "get the character encoding of the [INDEX] character in string [STR]",
     "jasonxu.string.fromCharCode": "get the character by character encoding [CODE]",
     "jasonxu.string.toDecimal": "Convert [NUM] in base [BASE] to decimal number",
-    "jasonxu.string.join": "Insert [JOIN] before [INDEX] of string [STR]"
+    "jasonxu.string.join": "Insert [JOIN] before [INDEX] of string [STR]",
+    "jasonxu.string.LowUpCheck":"Case sensitive [TEXT1] and [TEXT2]",
+    "jasonxu.string.changeStr":"Replace [STR] from character [INDEX] to character [LASTINDEX] with a string [CHSTR]"
 }

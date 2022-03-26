@@ -15,5 +15,7 @@
     "jasonxu.string.charCodeAt": "获取字符串 [STR] 中第 [INDEX] 个字符的字符编码",
     "jasonxu.string.fromCharCode": "获取字符编码为 [CODE] 的字符",
     "jasonxu.string.toDecimal": "将 [BASE] 进制数字 [NUM] 转换为十进制",
-    "jasonxu.string.join": "在字符串 [STR] 的第 [INDEX] 个字符前插入 [JOIN]"
+    "jasonxu.string.join": "在字符串 [STR] 的第 [INDEX] 个字符前插入 [JOIN]",
+    "jasonxu.string.LowUpCheck":"区分大小写 [TEXT1] 和 [TEXT2]",
+    "jasonxu.string.changeStr":"将字符串 [STR] 从第 [INDEX] 个字符至第 [LASTINDEX] 个字符替换为字符串 [CHSTR]"
 }

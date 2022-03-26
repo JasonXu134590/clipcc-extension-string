@@ -18,6 +18,9 @@ class StringExtension extends Extension {
         if (index < 1 || index > str.length) return NaN;
         return str.charCodeAt(index-1);
     };
+    changeStr(str,index,lastIndex,changeStr){
+        return str.substr(0, index-1) + changeStr.substr(0,lastIndex-index+1)+ str.substr(lastIndex , str.length);
+    }
 
     fromCharCode(code) {
         return String.fromCharCode(code);
@@ -65,6 +68,46 @@ class StringExtension extends Extension {
         });
 
         api.addBlock({
+            opcode: 'jasonxu.string.LowUpCheck.opcode',
+            type: type.BlockType.BOOLEAN,
+            messageId: 'jasonxu.string.LowUpCheck',
+            categoryId: 'jasonxu.string.string',
+            function: args => args.TEXT1 === args.TEXT2,
+            param: {
+                TEXT1: {
+                    type: type.ParameterType.STRING,
+                    default: 'a'
+                },TEXT2: {
+                    type: type.ParameterType.STRING,
+                    default: 'A'
+                }
+            }
+        });
+
+        api.addBlock({
+            opcode: 'jasonxu.string.changeStr.opcode',
+            type: type.BlockType.REPORTER,
+            messageId: 'jasonxu.string.changeStr',
+            categoryId: 'jasonxu.string.string',
+            function: args => this.changeStr(args.STR,args.INDEX,args.LASTINDEX,args.CHSTR),
+            param: {
+                STR: {
+                    type: type.ParameterType.STRING,
+                    default: 'Hello, World'
+                },INDEX: {
+                    type: type.ParameterType.NUMBER,
+                    default: 7
+                },LASTINDEX: {
+                    type: type.ParameterType.NUMBER,
+                    default: 12
+                },CHSTR: {
+                    type: type.ParameterType.STRING,
+                    default: 'ClipCC'
+                }
+            }
+        });
+
+        api.addBlock({
             opcode: 'jasonxu.string.colorToDecimal.opcode',
             type: type.BlockType.REPORTER,
             messageId: 'jasonxu.string.colorToDecimal',
@@ -77,6 +120,7 @@ class StringExtension extends Extension {
                 }
             }
         });
+
 
         api.addBlock({
             opcode: 'jasonxu.string.cutList.opcode',
