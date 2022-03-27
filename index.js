@@ -83,6 +83,46 @@ class StringExtension extends Extension {
                 }
             }
         });
+        
+        api.addBlock({
+            opcode: 'jasonxu.string.replace.opcode',
+            type:type.BlockType.REPORTER,
+            messageId: 'jasonxu.string.replace',
+            categoryId: 'jasonxu.string.string',
+            function: args => args.STR.replace(args.TXT1,args.TXT2),
+            param: {
+                STR: {
+                    type: type.ParameterType.STRING,
+                    default: 'Scratch yyds! Scratch yyds!'
+                },TXT1: {
+                    type: type.ParameterType.STRING,
+                    default: 'Scratch'
+                },TXT2: {
+                    type: type.ParameterType.STRING,
+                    default: 'ClipCC'
+                }
+            }
+        });
+        
+        api.addBlock({
+            opcode: 'jasonxu.string.replaceAll.opcode',
+            type:type.BlockType.REPORTER,
+            messageId: 'jasonxu.string.replaceAll',
+            categoryId: 'jasonxu.string.string',
+            function: args => args.STR.replaceAll(args.TXT1,args.TXT2),
+            param: {
+                STR: {
+                    type: type.ParameterType.STRING,
+                    default: 'Scratch yyds! Scratch yyds!'
+                },TXT1: {
+                    type: type.ParameterType.STRING,
+                    default: 'Scratch'
+                },TXT2: {
+                    type: type.ParameterType.STRING,
+                    default: 'ClipCC'
+                }
+            }
+        });
 
         api.addBlock({
             opcode: 'jasonxu.string.changeStr.opcode',

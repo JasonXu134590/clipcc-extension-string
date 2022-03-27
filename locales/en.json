@@ -17,5 +17,7 @@
     "jasonxu.string.toDecimal": "Convert [NUM] in base [BASE] to decimal number",
     "jasonxu.string.join": "Insert [JOIN] before [INDEX] of string [STR]",
     "jasonxu.string.LowUpCheck":"Case sensitive [TEXT1] and [TEXT2]",
-    "jasonxu.string.changeStr":"Replace [STR] from character [INDEX] to character [LASTINDEX] with a string [CHSTR]"
+    "jasonxu.string.changeStr":"Replace [STR] from character [INDEX] to character [LASTINDEX] with a string [CHSTR]",
+    "jasonxu.string.replaceAll":"Replace all [TXT1] in [STR] to [TXT2]",
+    "jasonxu.string.replace":"Replace first [TXT1] in [STR] to [TXT2]"
 }
