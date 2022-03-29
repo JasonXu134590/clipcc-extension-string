@@ -19,5 +19,8 @@
     "jasonxu.string.LowUpCheck":"Case sensitive [TEXT1] and [TEXT2]",
     "jasonxu.string.changeStr":"Replace [STR] from character [INDEX] to character [LASTINDEX] with a string [CHSTR]",
     "jasonxu.string.replaceAll":"Replace all [TXT1] in [STR] to [TXT2]",
-    "jasonxu.string.replace":"Replace first [TXT1] in [STR] to [TXT2]"
+    "jasonxu.string.replace":"Replace first [TXT1] in [STR] to [TXT2]",
+    "jasonxu.string.deleteItem":"Delete item [NUM] of the list [LIST] by [CUTER]",
+    "jasonxu.string.checkLength":"Length of list [LIST] by [CUTER]",
+    "jasonxu.string.changeItem":"Change item [NUM] of the list [LIST] to [THING] by [CUTER]"
 }

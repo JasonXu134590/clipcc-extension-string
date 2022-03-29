@@ -19,5 +19,8 @@
     "jasonxu.string.LowUpCheck":"区分大小写 [TEXT1] 和 [TEXT2]",
     "jasonxu.string.changeStr":"将字符串 [STR] 从第 [INDEX] 个字符至第 [LASTINDEX] 个字符替换为字符串 [CHSTR]",
     "jasonxu.string.replaceAll":"将字符串 [STR] 中所有 [TXT1] 替换为 [TXT2]",
-    "jasonxu.string.replace":"将字符串 [STR] 中第一个 [TXT1] 替换为 [TXT2]"
+    "jasonxu.string.replace":"将字符串 [STR] 中第一个 [TXT1] 替换为 [TXT2]",
+    "jasonxu.string.deleteItem":"使用分隔符 [CUTER] 删除列表 [LIST] 的第 [NUM] 项",
+    "jasonxu.string.checkLength":"使用分隔符 [CUTER] 获取列表 [LIST] 的长度",
+    "jasonxu.string.changeItem":"使用分隔符 [CUTER] 更改列表 [LIST] 的第 [NUM] 项为 [THING]"
 }

@@ -49,6 +49,23 @@ class StringExtension extends Extension {
     cut_list(str,char,num){
         return str.split(char)[num-1]
     }
+    
+    checkLength(str,char){
+        return str.split(char).length;
+    }
+    
+    deleteItem(str,char,item){
+        var list = str.split(char);
+        list.splice(item-1,1);
+        return list.join(char);
+    }
+    
+    changeItem(str,char,item,thing){
+        var list = str.split(char);
+        console.log(list);
+        list[item-1]=thing;
+        return list.join(char);
+    }
 
     colorToDecimal(color_){
         if(typeof(color_)=='string'){
@@ -180,6 +197,72 @@ class StringExtension extends Extension {
                 NUM: {
                     type: type.ParameterType.NUMBER,
                     default: '1'
+                }
+            }
+        });
+        
+        api.addBlock({
+            opcode: 'jasonxu.string.checkLength.opcode',
+            type: type.BlockType.REPORTER,
+            messageId: 'jasonxu.string.checkLength', 
+            categoryId: 'jasonxu.string.string',
+            function: args => this.checkLength(args.LIST, args.CUTER),
+            param: {
+                LIST: {
+                    type: type.ParameterType.STRING,
+                    default: 'ClipTeam|yyds!'
+                },
+                CUTER: {
+                    type: type.ParameterType.STRING,
+                    default: '|'
+                }
+            }
+        });
+        
+        api.addBlock({
+            opcode: 'jasonxu.string.deleteItem.opcode',
+            type: type.BlockType.REPORTER,
+            messageId: 'jasonxu.string.deleteItem', 
+            categoryId: 'jasonxu.string.string',
+            function: args => this.deleteItem(args.LIST, args.CUTER, args.NUM),
+            param: {
+                LIST: {
+                    type: type.ParameterType.STRING,
+                    default: 'ClipTeam|yyds|!!!'
+                },
+                CUTER: {
+                    type: type.ParameterType.STRING,
+                    default: '|'
+                },
+                NUM: {
+                    type: type.ParameterType.NUMBER,
+                    default: 1
+                }
+            }
+        });
+        
+        api.addBlock({
+            opcode: 'jasonxu.string.changeItem.opcode',
+            type: type.BlockType.REPORTER,
+            messageId: 'jasonxu.string.changeItem', 
+            categoryId: 'jasonxu.string.string',
+            function: args => this.changeItem(args.LIST, args.CUTER, args.NUM, args.THING),
+            param: {
+                LIST: {
+                    type: type.ParameterType.STRING,
+                    default: 'Scratch|yyds|!!!'
+                },
+                CUTER: {
+                    type: type.ParameterType.STRING,
+                    default: '|'
+                },
+                NUM: {
+                    type: type.ParameterType.NUMBER,
+                    default: 1
+                },
+                THING: {
+                    type: type.ParameterType.STRING,
+                    default: 'ClipTeam'
                 }
             }
         });
