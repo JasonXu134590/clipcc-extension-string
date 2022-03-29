@@ -62,7 +62,6 @@ class StringExtension extends Extension {
     
     changeItem(str,char,item,thing){
         var list = str.split(char);
-        console.log(list);
         list[item-1]=thing;
         return list.join(char);
     }

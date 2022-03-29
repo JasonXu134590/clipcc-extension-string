@@ -1,6 +1,6 @@
 {
     "jasonxu.string.name": "字符串扩展",
-    "jasonxu.string.description": "用于处理字符串信息。",
+    "jasonxu.string.description": "处理字符串信息。",
     "jasonxu.string.string.messageid": "字符串",
     "jasonxu.string.substr": "获取字符串 [STR] 从第 [FROM] 个字符至第 [TO] 个字符的值",
     "jasonxu.string.colorToDecimal": "把 [COLOUR] 转换为十进制",
