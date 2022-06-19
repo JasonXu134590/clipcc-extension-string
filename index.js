@@ -1,9 +1,25 @@
 const { Extension, type, api } = require('clipcc-extension');
+const vm = api.getVmInstance();
 
 class StringExtension extends Extension {
 
     find_(str, find, from){
         return str.indexOf(find, from-1)+1;
+    }
+
+    setVarValue(varJson,name,value,targetId,type){
+        var variableId = '';
+        for(var variable in varJson){
+            if(varJson[variable].name==name&&varJson[variable].type==type)  variableId=variable;
+        }
+        if(variableId!='')  vm.setVariableValue(targetId,variableId,value);
+    }
+
+    getVarValue(varJson,name,type){
+        for(var variable in varJson){
+            if(varJson[variable].name==name&&varJson[variable].type==type)  return varJson[variable].value;
+        }
+        return NaN;
     }
 
     insertStr(soure, start, newStr){   
@@ -100,6 +116,57 @@ class StringExtension extends Extension {
             }
         });
         
+        api.addBlock({
+            opcode: 'jasonxu.string.setVarValue.opcode',
+            type:type.BlockType.COMMAND,
+            messageId: 'jasonxu.string.setVarValue',
+            categoryId: 'jasonxu.string.string',
+            function: (args,util) => this.setVarValue(util.target.runtime.getTargetForStage().variables,args.NAME,args.VALUE,util.target.runtime.getTargetForStage().id,''),
+            param: {
+                NAME: {
+                    type: type.ParameterType.STRING,
+                    default: 'MyVariable'
+                },VALUE:{
+                    type: type.ParameterType.STRING,
+                    default: 'abc'
+                }
+            }
+        });
+
+        api.addBlock({
+            opcode: 'jasonxu.string.spiltListAndSave.opcode',
+            type:type.BlockType.COMMAND,
+            messageId: 'jasonxu.string.spiltListAndSave',
+            categoryId: 'jasonxu.string.string',
+            function: (args,util) => this.setVarValue(util.target.runtime.getTargetForStage().variables,args.NAME,args.LIST.split(args.CUTER),util.target.runtime.getTargetForStage().id,'list'),
+            param: {
+                NAME: {
+                    type: type.ParameterType.STRING,
+                    default: 'MyList'
+                },LIST:{
+                    type: type.ParameterType.STRING,
+                    default: 'ClipTeam|yyds!'
+                },CUTER:{
+                    type: type.ParameterType.STRING,
+                    default: '|'
+                }
+            }
+        });
+
+        api.addBlock({
+            opcode: 'jasonxu.string.getVarValue.opcode',
+            type:type.BlockType.REPORTER,
+            messageId: 'jasonxu.string.getVarValue',
+            categoryId: 'jasonxu.string.string',
+            function: (args,util) => this.getVarValue(util.target.runtime.getTargetForStage().variables,args.NAME,''),
+            param: {
+                NAME: {
+                    type: type.ParameterType.STRING,
+                    default: 'MyVariable'
+                }
+            }
+        });
+
         api.addBlock({
             opcode: 'jasonxu.string.replace.opcode',
             type:type.BlockType.REPORTER,

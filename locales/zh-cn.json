@@ -1,6 +1,6 @@
 {
     "jasonxu.string.name": "字符串扩展",
-    "jasonxu.string.description": "处理字符串信息。",
+    "jasonxu.string.description": "处理字符串信息",
     "jasonxu.string.string.messageid": "字符串",
     "jasonxu.string.substr": "获取字符串 [STR] 从第 [FROM] 个字符至第 [TO] 个字符的值",
     "jasonxu.string.colorToDecimal": "把 [COLOUR] 转换为十进制",
@@ -22,5 +22,8 @@
     "jasonxu.string.replace":"将字符串 [STR] 中第一个 [TXT1] 替换为 [TXT2]",
     "jasonxu.string.deleteItem":"使用分隔符 [CUTER] 删除列表 [LIST] 的第 [NUM] 项",
     "jasonxu.string.checkLength":"使用分隔符 [CUTER] 获取列表 [LIST] 的长度",
-    "jasonxu.string.changeItem":"使用分隔符 [CUTER] 更改列表 [LIST] 的第 [NUM] 项为 [THING]"
+    "jasonxu.string.changeItem":"使用分隔符 [CUTER] 更改列表 [LIST] 的第 [NUM] 项为 [THING]",
+    "jasonxu.string.getVarValue":"获取变量 [NAME] 的值",
+    "jasonxu.string.setVarValue":"将变量 [NAME] 设为 [VALUE]",
+    "jasonxu.string.spiltListAndSave":"分割字符串列表 [LIST] 分隔符 [CUTER] 并将其保存至列表 [NAME]"
 }
