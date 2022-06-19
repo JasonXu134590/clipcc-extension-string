@@ -2,6 +2,14 @@ const { Extension, type, api } = require('clipcc-extension');
 const vm = api.getVmInstance();
 
 class StringExtension extends Extension {
+    makeStrList(list,cuter){
+        try{
+            var str = list.join(cuter);
+        }catch{
+            return NaN;
+        }
+        return str;
+    }
 
     find_(str, find, from){
         return str.indexOf(find, from-1)+1;
@@ -146,6 +154,23 @@ class StringExtension extends Extension {
                 },LIST:{
                     type: type.ParameterType.STRING,
                     default: 'ClipTeam|yyds!'
+                },CUTER:{
+                    type: type.ParameterType.STRING,
+                    default: '|'
+                }
+            }
+        });
+
+        api.addBlock({
+            opcode: 'jasonxu.string.makeStrList.opcode',
+            type:type.BlockType.REPORTER,
+            messageId: 'jasonxu.string.makeStrList',
+            categoryId: 'jasonxu.string.string',
+            function: (args,util) => this.makeStrList(this.getVarValue(util.target.runtime.getTargetForStage().variables,args.NAME,'list'),args.CUTER),
+            param: {
+                NAME: {
+                    type: type.ParameterType.STRING,
+                    default: 'MyList'
                 },CUTER:{
                     type: type.ParameterType.STRING,
                     default: '|'

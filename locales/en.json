@@ -25,5 +25,6 @@
     "jasonxu.string.changeItem":"Change item [NUM] of the list [LIST] to [THING] by [CUTER]",
     "jasonxu.string.getVarValue":"Get value of variable [NAME]",
     "jasonxu.string.setVarValue":"Set variable [NAME] to [VALUE]",
-    "jasonxu.string.spiltListAndSave":"Split list [LIST] by [CUTER] and save it to [NAME]"
+    "jasonxu.string.spiltListAndSave":"Split list [LIST] by [CUTER] and save it to [NAME]",
+    "jasonxu.string.makeStrList":"Convert list [NAME] to string list by [CUTER]"
 }
