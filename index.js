@@ -2,9 +2,14 @@ const { Extension, type, api } = require('clipcc-extension');
 const vm = api.getVmInstance();
 
 class StringExtension extends Extension {
+    checkType(inf){
+        if(typeof(inf)!='string')   return inf.toString();
+        else return inf;
+    }
+
     makeStrList(list,cuter){
         try{
-            var str = list.join(cuter);
+            var str = this.checkType(list).join(this.checkType(cuter));
         }catch{
             return NaN;
         }
@@ -12,7 +17,7 @@ class StringExtension extends Extension {
     }
 
     find_(str, find, from){
-        return str.indexOf(find, from-1)+1;
+        return this.checkType(str).indexOf(find, from-1)+1;
     }
 
     setVarValue(varJson,name,value,targetId,type){
@@ -31,19 +36,19 @@ class StringExtension extends Extension {
     }
 
     insertStr(soure, start, newStr){   
-        return soure.slice(0, start) + newStr + soure.slice(start);
+        return this.checkType(soure).slice(0, start) + this.checkType(newStr) + this.checkType(soure).slice(start);
     }
 
     substr_(str, from, to) {
-        return str.slice(from-1,to);
+        return this.checkType(str).slice(from-1,to);
     }	
 
     charCodeAt(str,index) {
         if (index < 1 || index > str.length) return NaN;
-        return str.charCodeAt(index-1);
+        return this.checkType(str).charCodeAt(index-1);
     };
     changeStr(str,index,lastIndex,changeStr){
-        return str.substr(0, index-1) + changeStr.substr(0,lastIndex-index+1)+ str.substr(lastIndex , str.length);
+        return this.checkType(str).substr(0, index-1) + this.checkType(changeStr).substr(0,lastIndex-index+1)+ this.checkType(str).substr(lastIndex , str.length);
     }
 
     fromCharCode(code) {
@@ -59,35 +64,35 @@ class StringExtension extends Extension {
     }
 
     toUppercase(str){
-        return str.toUpperCase();
+        return this.checkType(str).toUpperCase();
     }
 
     toLowercase(str){
-        return str.toLowerCase();
+        return this.checkType(str).toLowerCase();
     }
 
     reverse(str){
-        return str.split('').reverse().join('');
+        return this.checkType(str).split('').reverse().join('');
     }
 
     cut_list(str,char,num){
-        return str.split(char)[num-1]
+        return this.checkType(str).split(this.checkType(char))[num-1]
     }
     
     checkLength(str,char){
-        return str.split(char).length;
+        return this.checkType(str).split(this.checkType(char)).length;
     }
     
     deleteItem(str,char,item){
-        var list = str.split(char);
+        var list = this.checkType(str).split(this.checkType(char));
         list.splice(item-1,1);
-        return list.join(char);
+        return list.join(this.checkType(char));
     }
     
     changeItem(str,char,item,thing){
-        var list = str.split(char);
+        var list = this.checkType(str).split(this.checkType(char));
         list[item-1]=thing;
-        return list.join(char);
+        return list.join(this.checkType(char));
     }
 
     colorToDecimal(color_){
@@ -197,7 +202,7 @@ class StringExtension extends Extension {
             type:type.BlockType.REPORTER,
             messageId: 'jasonxu.string.replace',
             categoryId: 'jasonxu.string.string',
-            function: args => args.STR.replace(args.TXT1,args.TXT2),
+            function: args => this.changeType(args.STR).replace(args.TXT1,args.TXT2),
             param: {
                 STR: {
                     type: type.ParameterType.STRING,
@@ -217,7 +222,7 @@ class StringExtension extends Extension {
             type:type.BlockType.REPORTER,
             messageId: 'jasonxu.string.replaceAll',
             categoryId: 'jasonxu.string.string',
-            function: args => args.STR.replaceAll(args.TXT1,args.TXT2),
+            function: args => this.changeType(args.STR).replaceAll(args.TXT1,args.TXT2),
             param: {
                 STR: {
                     type: type.ParameterType.STRING,
