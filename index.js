@@ -202,7 +202,7 @@ class StringExtension extends Extension {
             type:type.BlockType.REPORTER,
             messageId: 'jasonxu.string.replace',
             categoryId: 'jasonxu.string.string',
-            function: args => this.changeType(args.STR).replace(args.TXT1,args.TXT2),
+            function: args => this.checkType(args.STR).replace(args.TXT1,args.TXT2),
             param: {
                 STR: {
                     type: type.ParameterType.STRING,
@@ -222,7 +222,7 @@ class StringExtension extends Extension {
             type:type.BlockType.REPORTER,
             messageId: 'jasonxu.string.replaceAll',
             categoryId: 'jasonxu.string.string',
-            function: args => this.changeType(args.STR).replaceAll(args.TXT1,args.TXT2),
+            function: args => this.checkType(args.STR).replaceAll(args.TXT1,args.TXT2),
             param: {
                 STR: {
                     type: type.ParameterType.STRING,
