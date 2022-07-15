@@ -7,10 +7,15 @@ class StringExtension extends Extension {
         else return inf;
     }
 
+    getSpriteByName(name,runtime){
+        for(var sprite in runtime.targets)   if(runtime.targets[sprite].sprite.name==name)   return runtime.targets[sprite];
+        return NaN;
+    }
+
     makeStrList(list,cuter){
         try{
-            var str = this.checkType(list).join(this.checkType(cuter));
-        }catch{
+            var str = list.join(this.checkType(cuter));
+        }catch(err){
             return NaN;
         }
         return str;
@@ -134,7 +139,10 @@ class StringExtension extends Extension {
             type:type.BlockType.COMMAND,
             messageId: 'jasonxu.string.setVarValue',
             categoryId: 'jasonxu.string.string',
-            function: (args,util) => this.setVarValue(util.target.runtime.getTargetForStage().variables,args.NAME,args.VALUE,util.target.runtime.getTargetForStage().id,''),
+            function: (args,util) => {
+                var Json = this.getSpriteByName(args.SPRITE,util.target.runtime);
+                this.setVarValue(Json.variables,args.NAME,args.VALUE,Json.id,'')
+            },
             param: {
                 NAME: {
                     type: type.ParameterType.STRING,
@@ -142,6 +150,9 @@ class StringExtension extends Extension {
                 },VALUE:{
                     type: type.ParameterType.STRING,
                     default: 'abc'
+                },SPRITE:{
+                    type: type.ParameterType.STRING,
+                    default: 'Stage'
                 }
             }
         });
@@ -151,8 +162,10 @@ class StringExtension extends Extension {
             type:type.BlockType.COMMAND,
             messageId: 'jasonxu.string.spiltListAndSave',
             categoryId: 'jasonxu.string.string',
-            function: (args,util) => this.setVarValue(util.target.runtime.getTargetForStage().variables,args.NAME,args.LIST.split(args.CUTER),util.target.runtime.getTargetForStage().id,'list'),
-            param: {
+            function: (args,util) => {
+                var Json = this.getSpriteByName(args.SPRITE,util.target.runtime);
+                this.setVarValue(Json.variables,args.NAME,args.LIST.split(args.CUTER),Json.id,'list')
+            },param: {
                 NAME: {
                     type: type.ParameterType.STRING,
                     default: 'MyList'
@@ -162,6 +175,9 @@ class StringExtension extends Extension {
                 },CUTER:{
                     type: type.ParameterType.STRING,
                     default: '|'
+                },SPRITE:{
+                    type: type.ParameterType.STRING,
+                    default: 'Stage'
                 }
             }
         });
@@ -171,14 +187,19 @@ class StringExtension extends Extension {
             type:type.BlockType.REPORTER,
             messageId: 'jasonxu.string.makeStrList',
             categoryId: 'jasonxu.string.string',
-            function: (args,util) => this.makeStrList(this.getVarValue(util.target.runtime.getTargetForStage().variables,args.NAME,'list'),args.CUTER),
-            param: {
+            function: (args,util) => {
+                var Json = this.getSpriteByName(args.SPRITE,util.target.runtime);
+                return this.makeStrList(this.getVarValue(Json.variables,args.NAME,'list'),args.CUTER)
+            },param: {
                 NAME: {
                     type: type.ParameterType.STRING,
                     default: 'MyList'
                 },CUTER:{
                     type: type.ParameterType.STRING,
                     default: '|'
+                },SPRITE:{
+                    type: type.ParameterType.STRING,
+                    default: 'Stage'
                 }
             }
         });
@@ -188,11 +209,16 @@ class StringExtension extends Extension {
             type:type.BlockType.REPORTER,
             messageId: 'jasonxu.string.getVarValue',
             categoryId: 'jasonxu.string.string',
-            function: (args,util) => this.getVarValue(util.target.runtime.getTargetForStage().variables,args.NAME,''),
-            param: {
+            function: (args,util) => {
+                var Json = this.getSpriteByName(args.SPRITE,util.target.runtime);
+                return this.getVarValue(Json.variables,args.NAME,'')
+            },param: {
                 NAME: {
                     type: type.ParameterType.STRING,
                     default: 'MyVariable'
+                },SPRITE:{
+                    type: type.ParameterType.STRING,
+                    default: 'Stage'
                 }
             }
         });

@@ -23,8 +23,8 @@
     "jasonxu.string.deleteItem":"使用分隔符 [CUTER] 删除列表 [LIST] 的第 [NUM] 项",
     "jasonxu.string.checkLength":"使用分隔符 [CUTER] 获取列表 [LIST] 的长度",
     "jasonxu.string.changeItem":"使用分隔符 [CUTER] 更改列表 [LIST] 的第 [NUM] 项为 [THING]",
-    "jasonxu.string.getVarValue":"获取变量 [NAME] 的值",
-    "jasonxu.string.setVarValue":"将变量 [NAME] 设为 [VALUE]",
-    "jasonxu.string.spiltListAndSave":"分割字符串列表 [LIST] 分隔符 [CUTER] 并将其保存至列表 [NAME]",
-    "jasonxu.string.makeStrList":"将列表 [NAME] 转换为字符串列表 使用分隔符 [CUTER]"
+    "jasonxu.string.getVarValue":"获取角色 [SPRITE] 下变量 [NAME] 的值",
+    "jasonxu.string.setVarValue":"将角色 [SPRITE] 下变量 [NAME] 设为 [VALUE]",
+    "jasonxu.string.spiltListAndSave":"分割字符串列表 [LIST] 分隔符 [CUTER] 并将其保存至角色 [SPRITE] 下列表 [NAME]",
+    "jasonxu.string.makeStrList":"将角色 [SPRITE] 下列表 [NAME] 转换为字符串列表 使用分隔符 [CUTER]"
 }
