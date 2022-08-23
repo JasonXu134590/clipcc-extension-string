@@ -3,6 +3,7 @@ const vm = api.getVmInstance();
 
 class StringExtension extends Extension {
     checkType(inf){
+        if(inf == null) return '';
         if(typeof(inf)!='string')   return inf.toString();
         else return inf;
     }
@@ -118,6 +119,26 @@ class StringExtension extends Extension {
         });
 
         api.addBlock({
+            opcode: 'jasonxu.string.false.opcode',
+            type: type.BlockType.BOOLEAN,
+            messageId: 'jasonxu.string.false',
+            categoryId: 'jasonxu.string.string',
+            function: () => {
+                return false;
+            }
+        });
+
+        api.addBlock({
+            opcode: 'jasonxu.string.true.opcode',
+            type: type.BlockType.BOOLEAN,
+            messageId: 'jasonxu.string.true',
+            categoryId: 'jasonxu.string.string',
+            function: () => {
+                return true;
+            }
+        });
+
+        api.addBlock({
             opcode: 'jasonxu.string.LowUpCheck.opcode',
             type: type.BlockType.BOOLEAN,
             messageId: 'jasonxu.string.LowUpCheck',
@@ -178,6 +199,19 @@ class StringExtension extends Extension {
                 },SPRITE:{
                     type: type.ParameterType.STRING,
                     default: 'Stage'
+                }
+            }
+        });
+
+        api.addBlock({
+            opcode: 'jasonxu.string.typeof.opcode',
+            type:type.BlockType.REPORTER,
+            messageId: 'jasonxu.string.typeof',
+            categoryId: 'jasonxu.string.string',
+            function: (args) => typeof(args.THING),
+            param: {
+                THING: {
+                    type: type.ParameterType.ANY
                 }
             }
         });

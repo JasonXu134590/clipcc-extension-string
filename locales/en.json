@@ -26,5 +26,8 @@
     "jasonxu.string.getVarValue":"Get value of variable [NAME] in sprite [SPRITE]",
     "jasonxu.string.setVarValue":"Set variable [NAME] in sprite [SPRITE] to [VALUE]",
     "jasonxu.string.spiltListAndSave":"Split list [LIST] in sprite [SPRITE] by [CUTER] and save it to [NAME]",
-    "jasonxu.string.makeStrList":"Convert list [NAME] in sprite [SPRITE] to string list by [CUTER]"
+    "jasonxu.string.makeStrList":"Convert list [NAME] in sprite [SPRITE] to string list by [CUTER]",
+    "jasonxu.string.true":"true",
+    "jasonxu.string.false":"false",
+    "jasonxu.string.typeof":"type of [THING]"
 }

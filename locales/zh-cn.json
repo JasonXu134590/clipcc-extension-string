@@ -26,5 +26,8 @@
     "jasonxu.string.getVarValue":"获取角色 [SPRITE] 下变量 [NAME] 的值",
     "jasonxu.string.setVarValue":"将角色 [SPRITE] 下变量 [NAME] 设为 [VALUE]",
     "jasonxu.string.spiltListAndSave":"分割字符串列表 [LIST] 分隔符 [CUTER] 并将其保存至角色 [SPRITE] 下列表 [NAME]",
-    "jasonxu.string.makeStrList":"将角色 [SPRITE] 下列表 [NAME] 转换为字符串列表 使用分隔符 [CUTER]"
+    "jasonxu.string.makeStrList":"将角色 [SPRITE] 下列表 [NAME] 转换为字符串列表 使用分隔符 [CUTER]",
+    "jasonxu.string.true":"真",
+    "jasonxu.string.false":"假",
+    "jasonxu.string.typeof":" [THING] 的类型"
 }
